@@ -1,0 +1,58 @@
+[
+	{
+		"file": "C:\\Users\\peilu\\Downloads\\Repos\\ClimbingSystem\\Source\\ClimbingSystem\\ClimbingSystem.Build.cs",
+		"arguments": [
+			"C:\\Program Files\\Microsoft Visual Studio\\2022\\Community\\VC\\Tools\\MSVC\\14.37.32822\\bin\\Hostx64\\x64\\cl.exe",
+			"@C:\\Users\\peilu\\Downloads\\Repos\\ClimbingSystem\\.vscode\\compileCommands_Default\\ClimbingSystem.1.rsp"
+		],
+		"directory": "C:\\Program Files\\Epic Games\\UE_5.3\\Engine\\Source"
+	},
+	{
+		"file": "C:\\Users\\peilu\\Downloads\\Repos\\ClimbingSystem\\Source\\ClimbingSystem\\ClimbingSystem.cpp",
+		"arguments": [
+			"C:\\Program Files\\Microsoft Visual Studio\\2022\\Community\\VC\\Tools\\MSVC\\14.37.32822\\bin\\Hostx64\\x64\\cl.exe",
+			"@C:\\Users\\peilu\\Downloads\\Repos\\ClimbingSystem\\.vscode\\compileCommands_Default\\ClimbingSystem.1.rsp"
+		],
+		"directory": "C:\\Program Files\\Epic Games\\UE_5.3\\Engine\\Source"
+	},
+	{
+		"file": "C:\\Users\\peilu\\Downloads\\Repos\\ClimbingSystem\\Source\\ClimbingSystem\\ClimbingSystem.h",
+		"arguments": [
+			"C:\\Program Files\\Microsoft Visual Studio\\2022\\Community\\VC\\Tools\\MSVC\\14.37.32822\\bin\\Hostx64\\x64\\cl.exe",
+			"@C:\\Users\\peilu\\Downloads\\Repos\\ClimbingSystem\\.vscode\\compileCommands_Default\\ClimbingSystem.1.rsp"
+		],
+		"directory": "C:\\Program Files\\Epic Games\\UE_5.3\\Engine\\Source"
+	},
+	{
+		"file": "C:\\Users\\peilu\\Downloads\\Repos\\ClimbingSystem\\Source\\ClimbingSystem\\ClimbingSystemCharacter.cpp",
+		"arguments": [
+			"C:\\Program Files\\Microsoft Visual Studio\\2022\\Community\\VC\\Tools\\MSVC\\14.37.32822\\bin\\Hostx64\\x64\\cl.exe",
+			"@C:\\Users\\peilu\\Downloads\\Repos\\ClimbingSystem\\.vscode\\compileCommands_Default\\ClimbingSystem.1.rsp"
+		],
+		"directory": "C:\\Program Files\\Epic Games\\UE_5.3\\Engine\\Source"
+	},
+	{
+		"file": "C:\\Users\\peilu\\Downloads\\Repos\\ClimbingSystem\\Source\\ClimbingSystem\\ClimbingSystemCharacter.h",
+		"arguments": [
+			"C:\\Program Files\\Microsoft Visual Studio\\2022\\Community\\VC\\Tools\\MSVC\\14.37.32822\\bin\\Hostx64\\x64\\cl.exe",
+			"@C:\\Users\\peilu\\Downloads\\Repos\\ClimbingSystem\\.vscode\\compileCommands_Default\\ClimbingSystem.1.rsp"
+		],
+		"directory": "C:\\Program Files\\Epic Games\\UE_5.3\\Engine\\Source"
+	},
+	{
+		"file": "C:\\Users\\peilu\\Downloads\\Repos\\ClimbingSystem\\Source\\ClimbingSystem\\ClimbingSystemGameMode.cpp",
+		"arguments": [
+			"C:\\Program Files\\Microsoft Visual Studio\\2022\\Community\\VC\\Tools\\MSVC\\14.37.32822\\bin\\Hostx64\\x64\\cl.exe",
+			"@C:\\Users\\peilu\\Downloads\\Repos\\ClimbingSystem\\.vscode\\compileCommands_Default\\ClimbingSystem.1.rsp"
+		],
+		"directory": "C:\\Program Files\\Epic Games\\UE_5.3\\Engine\\Source"
+	},
+	{
+		"file": "C:\\Users\\peilu\\Downloads\\Repos\\ClimbingSystem\\Source\\ClimbingSystem\\ClimbingSystemGameMode.h",
+		"arguments": [
+			"C:\\Program Files\\Microsoft Visual Studio\\2022\\Community\\VC\\Tools\\MSVC\\14.37.32822\\bin\\Hostx64\\x64\\cl.exe",
+			"@C:\\Users\\peilu\\Downloads\\Repos\\ClimbingSystem\\.vscode\\compileCommands_Default\\ClimbingSystem.1.rsp"
+		],
+		"directory": "C:\\Program Files\\Epic Games\\UE_5.3\\Engine\\Source"
+	}
+]
