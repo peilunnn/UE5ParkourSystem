@@ -94,4 +94,5 @@ public:
 	void ToggleClimbing(bool bAttemptClimbing);
 	bool IsClimbing() const;
 	FORCEINLINE FVector GetClimbableSurfaceNormal() const { return CurrentClimbableSurfaceNormal; }
+	FVector GetUnrotatedClimbVelocity() const;
 };
