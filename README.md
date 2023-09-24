@@ -62,3 +62,11 @@
         When a and b are unit vectors, a.b = cos(θ)
         
         θ = cos−1 (a⋅b)
+
+    5. Check if floor reached (to exit climbing more naturally)
+        1. Check if line trace downwards from character hit anything, and
+        2. Character's speed must be in the downwards direction
+    
+    6. Check if ledge reached (to begin climb up animation)
+        1. Check if line trace starting from above the character, into the wall, hit anything
+        2. If it didn't, from that trace end, check if line trace downwards hit anything

@@ -53,6 +53,7 @@ private:
 	bool CheckHasReachedFloor();
 	FQuat GetClimbRotation(float DeltaTime);
 	void SnapMovementToClimbableSurfaces(float DeltaTime);
+	bool CheckHasReachedLedge();
 	void PlayClimbMontage(UAnimMontage *MontageToPlay);
 
 	UFUNCTION()
