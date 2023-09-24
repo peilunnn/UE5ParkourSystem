@@ -13,7 +13,10 @@
 		"typescript.tsc.autoDetect": "off",
 		"npm.autoDetect": "off",
 		"editor.fontSize": 16,
-		"C_Cpp.intelliSenseEngineFallback": "enabled"
+		"C_Cpp.intelliSenseEngineFallback": "enabled",
+		"files.associations": {
+			"*.rh": "cpp"
+		}
 	},
 	"extensions": {
 		"recommendations": [
