@@ -88,3 +88,8 @@
         1. We first need to swap out the current logic for handling climb and ground movement - right now when the directional input keys are pressed, we manually check isClimbing and then set the corresponding movement state
         2. Let's use a delegate instead - when character is climbing, CustomMovementComponent should notify Character via the delegate and add the corresponding input mapping context
         3. We will use this ClimbMappingContext when detecting when a directional key and jump key is pressed at the same time
+        4. Use dot product to figure out if player is trying to hop up/down/left/right - dot product of two parallel vectors is 1
+        5. Check if can hop up
+            1. Line trace from character's chest forwards into the wall
+            2. From that trace hit, check if line trace directly upwards hit anything
+            3. If it did, there is still wall for us to hop up to

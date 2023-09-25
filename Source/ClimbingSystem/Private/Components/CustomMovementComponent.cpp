@@ -485,14 +485,14 @@ TArray<FHitResult> UCustomMovementComponent::GetClimbableSurfaces()
     return ClimbableSurfacesTracedResults;
 }
 
-FHitResult UCustomMovementComponent::TraceFromEyeHeight(float TraceDistance, float TraceStartOffset)
+FHitResult UCustomMovementComponent::TraceFromEyeHeight(float TraceDistance, float TraceStartOffset, bool bShowDebugShape, bool bDrawPersistantShapes)
 {
     const FVector ComponentLocation = UpdatedComponent->GetComponentLocation();
     const FVector EyeHeightOffset = UpdatedComponent->GetUpVector() * (CharacterOwner->BaseEyeHeight + TraceStartOffset);
     const FVector Start = ComponentLocation + EyeHeightOffset;
     const FVector End = Start + UpdatedComponent->GetForwardVector() * TraceDistance;
 
-    return DoLineTraceSingleByObject(Start, End);
+    return DoLineTraceSingleByObject(Start, End, bShowDebugShape, bDrawPersistantShapes);
 }
 
 void UCustomMovementComponent::PlayClimbMontage(UAnimMontage *MontageToPlay)
@@ -533,6 +533,7 @@ void UCustomMovementComponent::RequestHopping()
     if (DotResult >= 0.9f)
     {
         Debug::Print(TEXT("Hop Up"));
+        HandleHopUp();
     }
     else if (DotResult <= -0.9f)
     {
@@ -552,6 +553,33 @@ void UCustomMovementComponent::SetMotionWarpTarget(const FName &InWarpTargetName
     OwningPlayerCharacter->GetMotionWarpingComponent()->AddOrUpdateWarpTargetFromLocation(
         InWarpTargetName,
         InTargetPosition);
+}
+
+void UCustomMovementComponent::HandleHopUp()
+{
+    FVector HopUpTargetPoint;
+
+    if (CheckCanHopUp(HopUpTargetPoint))
+    {
+        SetMotionWarpTarget(FName("HopUpTargetPoint"), HopUpTargetPoint);
+
+        PlayClimbMontage(HopUpMontage);
+    }
+}
+
+bool UCustomMovementComponent::CheckCanHopUp(FVector &OutHopUpTargetPosition)
+{
+    FHitResult HopUpHit = TraceFromEyeHeight(100.f, -30.f, true, true);
+    FHitResult SaftyLedgeHit = TraceFromEyeHeight(100.f, 150.f, true, true);
+
+    if (HopUpHit.bBlockingHit && SaftyLedgeHit.bBlockingHit)
+    {
+        OutHopUpTargetPosition = HopUpHit.ImpactPoint;
+
+        return true;
+    }
+
+    return false;
 }
 
 FVector UCustomMovementComponent::GetUnrotatedClimbVelocity() const

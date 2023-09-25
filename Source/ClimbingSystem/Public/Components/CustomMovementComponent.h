@@ -52,7 +52,7 @@ private:
 
 #pragma region ClimbCore
 	TArray<FHitResult> GetClimbableSurfaces();
-	FHitResult TraceFromEyeHeight(float TraceDistance, float TraceStartOffset = 0.f);
+	FHitResult TraceFromEyeHeight(float TraceDistance, float TraceStartOffset = 0.f, bool bShowDebugShape = false, bool bDrawPersistantShapes = false);
 	bool CanStartClimbing();
 	bool CanClimbDownLedge();
 	void StartClimbing();
@@ -71,6 +71,8 @@ private:
 	UFUNCTION()
 	void OnClimbMontageEnded(UAnimMontage *Montage, bool bInterrupted);
 	void SetMotionWarpTarget(const FName &InWarpTargetName, const FVector &InTargetPosition);
+	void HandleHopUp();
+	bool CheckCanHopUp(FVector &OutHopUpTargetPosition);
 #pragma endregion
 
 #pragma region ClimbCoreVariables
@@ -121,6 +123,9 @@ private:
 
 	UPROPERTY(EditDefaultsOnly, BlueprintReadOnly, Category = "Character Movement: Climbing", meta = (AllowPrivateAccess = "true"))
 	UAnimMontage *VaultMontage;
+
+	UPROPERTY(EditDefaultsOnly, BlueprintReadOnly, Category = "Character Movement: Climbing", meta = (AllowPrivateAccess = "true"))
+	UAnimMontage *HopUpMontage;
 #pragma endregion
 
 public:
