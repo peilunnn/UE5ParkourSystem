@@ -232,7 +232,7 @@ bool UCustomMovementComponent::CanStartVaulting(FVector &OutVaultStartPosition, 
             OutVaultStartPosition = VaultTraceHit.ImpactPoint;
         }
 
-        if (i == 3 && VaultTraceHit.bBlockingHit)
+        if (i == 1 && VaultTraceHit.bBlockingHit)
         {
             OutVaultLandPosition = VaultTraceHit.ImpactPoint;
         }
@@ -528,11 +528,8 @@ void UCustomMovementComponent::RequestHopping()
     const float DotResult =
         FVector::DotProduct(UnrotatedLastInputVector.GetSafeNormal(), FVector::UpVector);
 
-    Debug::Print(TEXT("Dot result: ") + FString::SanitizeFloat(DotResult));
-
     if (DotResult >= 0.9f)
     {
-        Debug::Print(TEXT("Hop Up"));
         HandleHopUp();
     }
     else if (DotResult <= -0.9f)
