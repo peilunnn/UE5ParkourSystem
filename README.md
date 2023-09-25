@@ -69,4 +69,8 @@
     
     6. Check if ledge reached (to begin climb up animation)
         1. Check if line trace starting from above the character, into the wall, hit anything
-        2. If it didn't, from that trace end, check if line trace downwards hit anything
+        2. If it didn't, it means there is open air so we have reached a ledge, and from that trace end, check if line trace directly downwards hit anything
+
+    6. Check can climb down from ledge
+        1. Check if line trace starting from slightly in front of character, to directly downwards hit anything
+        2. If it did, it means character is standing on a walkable surface, and from slightly forward of that trace end, check if line trace directly downwards hit anything
