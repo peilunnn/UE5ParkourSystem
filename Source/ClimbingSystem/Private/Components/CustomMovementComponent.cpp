@@ -520,6 +520,30 @@ void UCustomMovementComponent::OnClimbMontageEnded(UAnimMontage *Montage, bool b
     }
 }
 
+void UCustomMovementComponent::RequestHopping()
+{
+    const FVector UnrotatedLastInputVector =
+        UKismetMathLibrary::Quat_UnrotateVector(UpdatedComponent->GetComponentQuat(), GetLastInputVector());
+
+    const float DotResult =
+        FVector::DotProduct(UnrotatedLastInputVector.GetSafeNormal(), FVector::UpVector);
+
+    Debug::Print(TEXT("Dot result: ") + FString::SanitizeFloat(DotResult));
+
+    if (DotResult >= 0.9f)
+    {
+        Debug::Print(TEXT("Hop Up"));
+    }
+    else if (DotResult <= -0.9f)
+    {
+        Debug::Print(TEXT("Hop Down"));
+    }
+    else
+    {
+        Debug::Print(TEXT("Invalid Input Range"));
+    }
+}
+
 void UCustomMovementComponent::SetMotionWarpTarget(const FName &InWarpTargetName, const FVector &InTargetPosition)
 {
     if (!OwningPlayerCharacter)
