@@ -74,3 +74,12 @@
     6. Check can climb down from ledge
         1. Check if line trace starting from slightly in front of character, to directly downwards hit anything
         2. If it did, it means character is standing on a walkable surface, and from slightly forward of that trace end, check if line trace directly downwards hit anything
+
+    7. Check can vault
+        1. Draw 5 line traces in front of the character, each one longer than the previous one
+        2. Player | | | | |
+                    | | | |
+                    | | | |
+                      | | |
+                          |
+        3. We need 2 hits - first one for when the character places his hand on the surface and pushes off, and the second for when he lands
