@@ -85,4 +85,6 @@
         3. We need 2 hits - first one for when the character places his hand on the surface and pushes off, and the second for when he lands
 
     8. Hopping by pressing down directional key and jump key at the same time
-        1. When character is climbing, CustomMovementComponent should notify Character via a delegate and add the corresponding input mapping context 
+        1. We first need to swap out the current logic for handling climb and ground movement - right now when the directional input keys are pressed, we manually check isClimbing and then set the corresponding movement state
+        2. Let's use a delegate instead - when character is climbing, CustomMovementComponent should notify Character via the delegate and add the corresponding input mapping context
+        3. We will use this ClimbMappingContext when detecting when a directional key and jump key is pressed at the same time
