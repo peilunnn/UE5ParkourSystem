@@ -83,3 +83,6 @@
                       | | |
                           |
         3. We need 2 hits - first one for when the character places his hand on the surface and pushes off, and the second for when he lands
+
+    8. Hopping by pressing down directional key and jump key at the same time
+        1. When character is climbing, CustomMovementComponent should notify Character via a delegate and add the corresponding input mapping context 
