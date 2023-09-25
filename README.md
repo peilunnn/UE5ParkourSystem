@@ -1,3 +1,5 @@
+[![Video Demo](UE5ParkourSystemThumbnail.png)](https://youtu.be/HxhCaLKyo9g)
+
 # Thought Process
 1. Check if surface is climbable
 - Use capsule trace
